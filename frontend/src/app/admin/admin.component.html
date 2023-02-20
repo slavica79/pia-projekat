@@ -1,0 +1,172 @@
+<nav>
+  <div class="logo">
+    <img src="/assets/logo.png" class="nav-logo">
+  </div>
+  <div class="nav-right">
+    <div class="links">
+      <a routerLink="" (click)="logout()">Logout</a>
+    </div>
+  </div>
+</nav>
+
+<div class="center">
+  <h1 class="content-title">Welcome to admin page!</h1>
+</div>
+
+<div class="content">
+
+  <h2>All users</h2>
+  <table>
+    <tr>
+      <th>Picture</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Username</th>
+      <th>Contact</th>
+      <th>Email</th>
+      <th>Type</th>
+      <th>Organization name</th>
+      <th>Organization adress</th>
+      <th>Organization number</th>
+      <th style="background-color: white;"></th>
+    </tr>
+    <tr *ngFor='let u of allUsers'>
+      <td style="background-color: white; border: none;">
+        <!--slika usera-->
+        <img src={{u.icon}} style="width: 50px; height: 50px;">
+      </td>
+      <td>{{u.firstname}}</td>
+      <td>{{u.lastname}}</td>
+      <td>{{u.username}}</td>
+      <td>{{u.contact}}</td>
+      <td>{{u.email}}</td>
+      <td>{{getType(u.type)}}</td>
+      <td>{{u.org_name}}</td>
+      <td>{{u.org_adress}}</td>
+      <td>{{u.org_number}}</td>
+      <td style="background-color: white; border: none;">
+        <button (click)="updateUser(u)" class="button td-button">Update</button>
+        <button (click)="deleteUser(u)" class="button td-button">Delete</button>
+      </td>
+    </tr>
+  </table>
+  <span class="error">
+    {{message1}}
+  </span>
+  <span class="success">
+    {{successMessage1}}
+  </span>
+  <button (click)="addNewUser()" class="button">Add new user</button>
+
+  <h2>Requests for registration</h2>
+  <table>
+    <tr>
+      <th>Picture</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Username</th>
+      <th>Contact</th>
+      <th>Email</th>
+      <th>Type</th>
+      <th>Organization name</th>
+      <th>Organization adress</th>
+      <th>Organization number</th>
+      <th style="background-color: white;"></th>
+    </tr>
+    <tr *ngFor='let u of allNotApprovedReq'>
+      <td style="background-color: white; border: none;">
+        <!--slika usera-->
+        <img src={{u.icon}} style="width: 50px; height: 50px;">
+      </td>
+      <td>{{u.firstname}}</td>
+      <td>{{u.lastname}}</td>
+      <td>{{u.username}}</td>
+      <td>{{u.contact}}</td>
+      <td>{{u.email}}</td>
+      <td>{{getType(u.type)}}</td>
+      <td>{{u.org_name}}</td>
+      <td>{{u.org_adress}}</td>
+      <td>{{u.org_number}}</td>
+      <td style="background-color: white; border: none;">
+        <button (click)="approve(u)" class="button td-button">Approve</button>
+        <button (click)="refuse(u)" class="button td-button">Refuse</button>
+      </td>
+    </tr>
+  </table>
+  <span class="error">
+    {{message2}}
+  </span>
+  <span class="success">
+    {{successMessage2}}
+  </span>
+
+  <h2>All studios</h2>
+  <table>
+    <tr>
+      <th>Picture</th>
+      <th>Name</th>
+      <th>User</th>
+      <th>Date</th>
+      <th>Adress</th>
+      <th>Description</th>
+      <th style="background-color: white;"></th>
+    </tr>
+    <tr *ngFor='let s of allStudios'>
+      <td style="background-color: white; border: none;">
+        <!--slika-->
+        <img src={{s.icon}} style="width: 100px; height: 100px;">
+      </td>
+      <td>{{s.name}}</td>
+      <td>{{s.user}}</td>
+      <td>{{stringAsDate(s.date)}}</td>
+      <td>{{s.address}}</td>
+      <td>{{s.description}}</td>
+      <td style="background-color: white; border: none;">
+        <button (click)="updateStudio(s)" class="button td-button">Update</button>
+        <button (click)="deleteStudio(s)" class="button td-button">Delete</button>
+      </td>
+    </tr>
+  </table>
+
+  <button (click)="addNewStudio()" class="button">Add new studio</button>
+
+  <span class="error">
+    {{message3}}
+  </span>
+  <span class="success">
+    {{successMessage3}}
+  </span>
+
+  <h2>Studio suggestions</h2>
+  <table>
+    <tr>
+      <th>Picture</th>
+      <th>Name</th>
+      <th>User</th>
+      <th>Date</th>
+      <th>Adress</th>
+      <th>Description</th>
+    </tr>
+    <tr *ngFor='let s of allStudioSuggestions'>
+      <td style="background-color: white; border: none;">
+        <!--slika-->
+        <img src={{s.icon}} style="width: 100px; height: 100px;">
+      </td>
+      <td>{{s.name}}</td>
+      <td>{{s.user}}</td>
+      <td>{{stringAsDate(s.date)}}</td>
+      <td>{{s.address}}</td>
+      <td>{{s.description}}</td>
+      <td style="background-color: white; border: none;">
+        <button class="button td-button" (click)="approveStudio(s)">Approve</button>
+        <button class="button td-button" (click)="deleteStudio(s)">Refuse</button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div class="footer footer-fixed">
+  <small>
+    Copyright &copy; 2023, Slavica Mitrovic, University of Belgrade, School of Electrical Engineering
+  </small>
+</div>

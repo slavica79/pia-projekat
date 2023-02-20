@@ -1,0 +1,95 @@
+<nav>
+  <div class="logo">
+    <img src="/assets/logo.png" class="nav-logo">
+  </div>
+  <div class="nav-right">
+    <div class="links">
+      <a routerLink="" (click)="logout()">Logout</a>
+    </div>
+    <div>
+      <img src="/assets/menu.png" class="nav-profile nav-button">
+      <div class="dropdown">
+        <a routerLink="/changePassword">Change password</a>
+        <a routerLink="/organizerProfile">View profile</a>
+        <a routerLink="/organizer">Studios</a>
+        <a routerLink="/becomeOrganizer">Add studio</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="profile-container">
+  <div class="profile-header">
+    <img src={{user.icon}} style="width: 150px; height: 150px;">
+    <h2>{{user.firstname}} {{user.lastname}}</h2>
+    <p>{{user.username}}</p>
+  </div>
+  <div class="profile-body">
+    <p><b>Email:</b> {{user.email}}</p>
+    <p><b>Contact:</b> {{user.contact}}</p>
+    <p><b>Type:</b> {{getType(user.type)}}</p>
+  </div>
+  <button (click)="update(user)" class="button td-button" style="float: right;">Update</button>
+</div>
+
+<div class="content">
+
+  <h2>Studios</h2>
+  <table>
+    <tr>
+      <th>Picture</th>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Adress</th>
+      <th>Description</th>
+    </tr>
+    <tr *ngFor='let s of studios'>
+      <td style="background-color: white; border: none;">
+        <!--slika-->
+        <img src={{s.icon}} style="width: 100px; height: 100px;">
+      </td>
+      <td>{{s.name}}</td>
+      <td>{{stringAsDate(s.date)}}</td>
+      <td>{{s.address}}</td>
+      <td>{{s.description}}</td>
+      <td *ngIf="user.username == s.user" style="background-color: white; border: none;">
+        <button (click)="openChats(s)" class="button td-button">Chats</button>
+      </td>
+    </tr>
+  </table>
+
+  <div class="chat-container">
+    <div class="chat-sidebar">
+      <h2>Chats</h2>
+      <ul class="chat-list">
+        <li *ngFor="let p of people" (click)="showMsg(p)">{{p}}</li>
+      </ul>
+    </div>
+    <div class="chat-main">
+      <div class="chat-header">
+        <!--moze slika i ime u headeru-->
+        <img src={{icon}} style="width: 50px; height: 50px;">
+        <h2>{{active}}</h2>
+      </div>
+      <div class="chat-body">
+        <div *ngFor="let m of messages" class="message"
+        [class.incoming]="m.from === active" [class.outgoing]="m.from === user.username">
+          <div>
+            <div class="timestamp">{{stringAsDateTime(m.date)}}</div>
+            <div class="text">{{m.message}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="chat-footer">
+        <input type="text" placeholder="Type your message here..." [(ngModel)]="msg">
+        <button (click)="sendMsg()">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer footer-fixed">
+  <small>
+      Copyright &copy; 2023, Slavica Mitrovic, University of Belgrade, School of Electrical Engineering
+  </small>
+</div>

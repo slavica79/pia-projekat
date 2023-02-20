@@ -1,0 +1,86 @@
+<nav>
+  <div class="logo">
+    <img src="/assets/logo.png" class="nav-logo">
+  </div>
+  <div class="nav-right">
+    <div class="links">
+      <a routerLink="" (click)="logout()">Logout</a>
+    </div>
+    <div>
+      <img src="/assets/menu.png" class="nav-profile nav-button">
+      <div class="dropdown">
+        <a routerLink="/changePassword">Change password</a>
+        <a routerLink="/participantProfile">View profile</a>
+        <a routerLink="/participant">Studios</a>
+        <a routerLink="/becomeOrganizer">Become an organizer</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!--pocetna da bude ono sto kaze da vidi sve aktulne radionice; kao kod neregistrovanog-->
+
+<div class="content">
+
+  <!--oni koji jos nisu prosli-->
+  <h2>Registered studios</h2>
+  <table>
+    <tr>
+      <th>Picture</th>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Adress</th>
+      <th>Description</th>
+    </tr>
+    <tr *ngFor='let s of registeredStudios'>
+      <td style="background-color: white; border: none;">
+        <!--slika-->
+        <img src={{s.icon}} style="width: 100px; height: 100px;">
+      </td>
+      <td>{{s.name}}</td>
+      <td>{{stringAsDate(s.date)}}</td>
+      <td>{{s.address}}</td>
+      <td>{{s.description}}</td>
+      <td *ngIf="checkTime(s.date)" style="background-color: white; border: none;">
+        <button (click)="cancel(s)" class="button td-button">Cancel</button>
+      </td>
+    </tr>
+  </table>
+  <span class="error">
+    {{message}}
+  </span>
+  <span class="success">
+    {{successMessage}}
+  </span>
+
+  <h2>Studios</h2>
+  <table>
+    <tr>
+      <th>Picture</th>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Adress</th>
+      <th>Description</th>
+    </tr>
+    <tr *ngFor='let s of studios'>
+      <td style="background-color: white; border: none;">
+        <!--slika-->
+        <img src={{s.icon}} style="width: 100px; height: 100px;">
+      </td>
+      <td>{{s.name}}</td>
+      <td>{{stringAsDate(s.date)}}</td>
+      <td>{{s.address}}</td>
+      <td>{{s.description}}</td>
+      <td style="background-color: white; border: none;">
+        <button (click)="details(s)" class="button td-button">Details</button>
+      </td>
+    </tr>
+  </table>
+
+</div>
+
+<div class="footer footer-fixed">
+  <small>
+      Copyright &copy; 2023, Slavica Mitrovic, University of Belgrade, School of Electrical Engineering
+  </small>
+</div>

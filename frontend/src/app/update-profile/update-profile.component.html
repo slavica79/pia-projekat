@@ -1,0 +1,66 @@
+<nav>
+  <div class="logo">
+    <img src="/assets/logo.png" class="nav-logo">
+  </div>
+  <div class="nav-right">
+    <div class="links">
+      <a routerLink="" (click)="logout()">Logout</a>
+    </div>
+    <div *ngIf="pageType != 'admin'">
+      <img src="/assets/menu.png" class="nav-profile nav-button">
+      <div class="dropdown">
+        <a routerLink="../changePassword">Change password</a>
+        <a routerLink="../participantProfile">View profile</a>
+        <a routerLink="../participant">Studios</a>
+        <a routerLink="">Become an organizer</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="center">
+  <h1 class="content-title">Update user profile</h1>
+</div>
+<div class="center">
+  <form class="form">
+    <div>
+      <label>Firstname:</label>
+      <input type="text" name="firstaname" [(ngModel)]="firstname">
+    </div>
+    <div>
+      <label>Lastname:</label>
+      <input type="text" name="lastname" [(ngModel)]="lastname">
+    </div>
+    <div>
+      <label> Contact </label>
+      <input type="text" name="contact" [(ngModel)]="contact">
+    </div>
+    <div>
+      <label> Email </label>
+      <input type="text" name="email" [(ngModel)]="email">
+    </div>
+
+    <!--profilna slika - neobavezna-->
+    <div>
+      <label>Profile picture (optional)</label>
+      <input class="form-file" type="file" name="picture" accept="image/*" (change)="onFileSelected($event)"/>
+    </div>
+
+    <button (click)="update()" class="button">UPDATE</button>
+
+    <span class="error">
+      {{message}}
+    </span>
+    <span class="success">
+      {{successMessage}}
+    </span>
+
+  </form>
+</div>
+
+<div class="footer footer-fixed">
+  <small>
+      Copyright &copy; 2023, Slavica Mitrovic, University of Belgrade, School of Electrical Engineering
+  </small>
+</div>
+

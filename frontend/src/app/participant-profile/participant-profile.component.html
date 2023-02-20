@@ -1,0 +1,155 @@
+<nav>
+  <div class="logo">
+    <img src="/assets/logo.png" class="nav-logo">
+  </div>
+  <div class="nav-right">
+    <div class="links">
+      <a routerLink="" (click)="logout()">Logout</a>
+    </div>
+    <div>
+      <img src="/assets/menu.png" class="nav-profile nav-button">
+      <div class="dropdown">
+        <a routerLink="/changePassword">Change password</a>
+        <a routerLink="/participantProfile">View profile</a>
+        <a routerLink="/participant">Studios</a>
+        <a routerLink="/becomeOrganizer">Become an organizer</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="profile-container">
+  <div class="profile-header">
+    <img src={{user.icon}} style="width: 150px; height: 150px;">
+    <h2>{{user.firstname}} {{user.lastname}}</h2>
+    <p>{{user.username}}</p>
+  </div>
+  <div class="profile-body">
+    <p><b>Email:</b> {{user.email}}</p>
+    <p><b>Contact:</b> {{user.contact}}</p>
+    <p><b>Type:</b> {{getType(user.type)}}</p>
+  </div>
+  <button (click)="update(user)" class="button td-button" style="float: right;">Update</button>
+</div>
+
+<!--radionice-->
+
+<div class="content">
+
+  <form class="form">
+    <div class="buttons">
+      <button (click)="sortStudiosByName()" class="button">Sort studios by name</button>
+      <button (click)="sortStudiosByAddress()" class="button">Sort studios by address</button>
+      <button (click)="sortStudiosByDate()" class="button">Sort studios by date</button>
+    </div>
+  </form>
+
+  <h2>Studios</h2>
+  <table>
+    <tr>
+      <th>Picture</th>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Adress</th>
+      <th>Description</th>
+    </tr>
+    <tr *ngFor='let s of studios'>
+      <td style="background-color: white; border: none;">
+        <!--slika-->
+        <img src={{s.icon}} style="width: 100px; height: 100px;">
+      </td>
+      <td>{{s.name}}</td>
+      <td>{{stringAsDate(s.date)}}</td>
+      <td>{{s.address}}</td>
+      <td>{{s.description}}</td>
+    </tr>
+  </table>
+
+  <h2>Likes</h2>
+  <table>
+    <tr>
+      <th>Picture</th>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Click to dislike</th>
+    </tr>
+    <tr *ngFor='let s of likedStudios'>
+      <td style="background-color: white; border: none;">
+        <!--slika-->
+        <img src={{s.icon}} style="width: 100px; height: 100px;">
+      </td>
+      <td>{{s.name}}</td>
+      <td>{{stringAsDate(s.date)}}</td>
+      <td style="background-color: white; border: none;">
+        <button class="like-button" (click)="dislike(s)">
+          <img src="/assets/like.png" class="like-image">
+        </button>
+      </td>
+    </tr>
+  </table>
+
+  <span class="error">
+    {{message}}
+  </span>
+  <span class="success">
+    {{successMessage}}
+  </span>
+
+  <h2>Comments</h2>
+  <table>
+    <tr>
+      <th>Picture</th>
+      <th>Name of studio</th>
+      <th>Date</th>
+      <th>Text</th>
+    </tr>
+    <tr *ngFor='let s of commentedStudios'>
+      <td style="background-color: white; border: none;">
+        <!--slika-->
+        <img src={{s.icon}} style="width: 100px; height: 100px;">
+      </td>
+      <td>{{s.studio}}</td>
+      <td>{{stringAsDate(s.date)}}</td>
+      <td>{{s.comment}}</td>
+      <td style="background-color: white; border: none;">
+        <button (click)="deleteComment(s)" class="button td-button">Delete</button>
+        <button (click)="updateComment(s)" class="button td-button">Update</button>
+      </td>
+    </tr>
+  </table>
+
+  <form class="form" style="margin: 20px;">
+    <div class="buttons">
+      <div>
+        <label> Insert text and click on button "update" of comment you want to change! </label>
+        <br/>
+        <input style="width: 80%;" type="text" name="text" [(ngModel)]="text">
+      </div>
+    </div>
+  </form>
+
+  <div class="chats">
+    <div *ngFor="let c of chats" class="chat-container">
+      <div class="chat-header">
+        <img src={{c.icon}} style="width: 50px; height: 50px;">
+        <h2>{{c.organizer}}: {{c.studio}}</h2>
+      </div>
+      <div class="chat-body">
+        <div *ngFor="let m of c.messages" class="message"
+        [class.incoming]="m.from === c.organizer" [class.outgoing]="m.from === c.participant">
+          <div>
+            <div class="timestamp">{{stringAsDate(m.date)}}</div>
+            <div class="text">{{m.message}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer footer-fixed">
+  <small>
+      Copyright &copy; 2023, Slavica Mitrovic, University of Belgrade, School of Electrical Engineering
+  </small>
+</div>

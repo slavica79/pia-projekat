@@ -1,0 +1,456 @@
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.links {
+  float: right;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.logo {
+  display: flex;
+  justify-content: left;
+  float: left;
+  border-radius: 4px;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: blue;
+}
+
+span {
+  margin-bottom: 50px;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: grey;
+  font-weight: bolder;
+}
+
+nav {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background: lightskyblue;
+  padding: 5px 20px 5px 40px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 0 0 7px 7px;
+  margin: 0 10px;
+  z-index: 1;
+}
+
+.nav-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-logo {
+  height: 50px;
+  padding: 10px;
+}
+
+.nav-profile {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.nav-button, .nav-text {
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.content-title {
+  background-color: transparent;
+  padding: 10px !important;
+  color: #999
+}
+
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: initial;
+}
+
+.form label {
+  font-size: 15px;
+  color: #777;
+  float: left;
+}
+
+.form input, .radio-group > label {
+  background: rgb(195, 227, 247);
+  align-items: center;
+  color: #555;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 600;
+  border: 1px solid #dce0e7;
+  border-radius: 4px;
+  height: 35px;
+  padding: 0 10px;
+}
+
+.form textarea {
+  background: rgb(195, 227, 247);
+  align-items: center;
+  color: #555;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 600;
+  border: 1px solid #dce0e7;
+  border-radius: 4px;
+  height: 100px;
+  padding: 0 10px;
+}
+
+.form-file {
+  background: white !important;
+  text-align: center;
+  color: #555;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 600;
+  border: none !important;
+  border-radius: 4px;
+  height: 35px;
+  padding: 0 10px;
+}
+
+.button {
+  background:lightskyblue;
+  color: #999;
+  height: 45px !important;
+  width: 200px !important;
+  margin: 30px 10px;
+  padding: 10px;
+  box-shadow: 0 0 16px rgb(0, 0, 0, 0.25);
+  border-style: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bolder;
+}
+
+.button:hover {
+  background:rgb(83, 185, 249);
+}
+
+.dropdown {
+  right: 30px;
+  top: 67px;
+  position: absolute;
+  background-color: lightskyblue;
+  min-width: 250px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  display: none;
+}
+
+.dropdown > * {
+  padding: 10px;
+  display: block;
+  margin: 5px;
+}
+
+.dropdown > *:hover {
+  margin: 10px;
+}
+
+.nav-button:hover + .dropdown, .dropdown:hover {
+  display: block;
+}
+
+.content {
+  margin: 30px;
+  padding: 30px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/*FOOTER*/
+
+.footer-fixed {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  background: lightskyblue;
+}
+
+
+/*HOME PAGE*/
+
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+/*TABLE*/
+
+tr:nth-child(even) {
+  background-color: rgb(195, 227, 247);
+}
+
+tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 10px 10px;
+}
+
+td {
+  width: 200px;
+  text-align: center;
+  border: 1px solid #999;
+  padding: 5px;
+}
+
+.td-button {
+  width: 100px !important;
+  height: 25px !important;
+  margin: 5px !important;
+  box-shadow: none !important;
+}
+
+
+/*PROFILE*/
+
+.profile-container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 5px;
+  width: 300px;
+}
+
+.profile-header {
+  text-align: center;
+}
+
+.profile-header img {
+  border-radius: 50%;
+}
+
+.profile-header h2 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.profile-header p {
+  color: #888;
+  font-size: 14px;
+}
+
+.profile-body {
+  margin-top: 20px;
+}
+
+.profile-body p {
+  margin-bottom: 10px;
+}
+
+
+/*LIKE*/
+
+.like-button {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  background-color: white;
+}
+
+.like-image {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.like-image:hover {
+  border: 1px solid black;
+}
+
+
+/*STUDIO DETAILS*/
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.item {
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.description {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.description h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.description p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+
+/*CHAT*/
+
+.chat-container {
+  display: flex;
+  height: 400px;
+  width: 600px;
+  border: 1px solid black;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.chat-sidebar {
+  flex-basis: 25%;
+  background-color: #f1f1f1;
+  overflow-y: scroll;
+  padding: 10px;
+  border-right: 1px solid black;
+}
+
+.chat-sidebar h2 {
+  margin-top: 0;
+}
+
+.chat-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chat-list li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.chat-list li.active {
+  background-color: #ddd;
+}
+
+.chat-main {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 75%;
+}
+
+.chat-header {
+  display: flex;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid black;
+}
+
+.chat-body {
+  padding: 10px;
+  flex-grow: 1;
+  overflow-y: scroll;
+}
+
+.timestamp {
+  margin-left: 10px;
+  color: lightgray;
+  size: 5px !important;
+}
+
+.message {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+.outgoing {
+  justify-content: flex-end;
+}
+
+.incoming .text {
+  background-color: #f1f1f1;
+  color: black;
+  border-radius: 10px 10px 0 10px;
+  padding: 10px;
+}
+
+.outgoing .text {
+  background-color: skyblue;
+  color: white;
+  border-radius: 10px 10px 10px 0;
+  padding: 10px;
+}
+
+.sender {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.chat-footer {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid black;
+}
+
+.chat-footer input[type="text"] {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.chat-footer button {
+  background-color: lightskyblue;
+  color: #999;
+  font-weight: bolder;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.chat-footer button:hover {
+  background-color: rgb(83, 185, 249);
+}
+

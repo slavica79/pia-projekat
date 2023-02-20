@@ -1,0 +1,106 @@
+<nav>
+  <div class="logo">
+    <img src="/assets/logo.png" class="nav-logo">
+  </div>
+  <div class="nav-right">
+    <div class="links">
+      <a routerLink="" (click)="logout()">Logout</a>
+    </div>
+    <div>
+      <img src="/assets/menu.png" class="nav-profile nav-button">
+      <div class="dropdown">
+        <a routerLink="/changePassword">Change password</a>
+        <a routerLink="/participantProfile">View profile</a>
+        <a routerLink="/participant">Studios</a>
+        <a routerLink="/becomeOrganizer">Become an organizer</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="content">
+
+  <div>
+    <form class="form">
+      <div class="buttons">
+        <button *ngIf="studio.free_spaces > 0" (click)="apply()" class="button">Apply</button>
+        <button *ngIf="studio.free_spaces == 0" (click)="informMe()" class="button">Inform me</button>
+      </div>
+    </form>
+  </div>
+  <span class="error">
+    {{message}}
+  </span>
+  <span class="success">
+    {{successMessage}}
+  </span>
+
+  <div class="gallery">
+    <div class="item" *ngFor="let p of pictures">
+      <img src={{p}} style="width: 150px; height: 150px;">
+    </div>
+    <div class="description">
+      <h2>{{studio.name}}</h2>
+      <p>{{studio.full_description}}</p>
+      <p><b>Address: </b> {{studio.address}}</p>
+    </div>
+  </div>
+
+  <div class="chats">
+    <div class="chat-container">
+      <div class="chat-header">
+        <img src={{organizer_icon}} style="width: 50px; height: 50px;">
+        <h2>{{studio.user}}</h2>
+      </div>
+      <div class="chat-body">
+        <div *ngFor="let m of messages" class="message"
+        [class.incoming]="m.from === chat.organizer" [class.outgoing]="m.from === chat.participant">
+          <div>
+            <div class="timestamp">{{stringAsDate(m.date)}}</div>
+            <div class="text">{{m.message}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="chat-footer">
+        <input type="text" placeholder="Type your message here..." [(ngModel)]="msg">
+        <button (click)="sendMsg()">Send</button>
+      </div>
+    </div>
+
+    <!--comments and likes-->
+    <div class="chat-container">
+      <div class="chat-header" style="display: flex; flex-direction: column;">
+        <h2>Likes and comments</h2>
+        <div>
+          {{studio.likes}}
+          <button class="like-button" (click)="like()">
+            <img src="/assets/like.png" class="like-image">
+          </button>
+          {{comments.length}}
+          <img src="/assets/comms.png" class="comm-picture">
+        </div>
+      </div>
+      <div class="chat-body">
+        <div *ngFor="let c of comments" class="message"
+        [class.incoming]="c.user != user.username" [class.outgoing]="c.user === user.username">
+          <div>
+            <div class="timestamp">{{stringAsDate(c.date)}}</div>
+            <div class="text">{{c.comment}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="chat-footer">
+        <input type="text" placeholder="Type your message here..." [(ngModel)]="comm">
+        <button (click)="comment()">Comment</button>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<div class="footer footer-fixed">
+  <small>
+      Copyright &copy; 2023, Slavica Mitrovic, University of Belgrade, School of Electrical Engineering
+  </small>
+</div>

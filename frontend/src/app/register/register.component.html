@@ -1,0 +1,94 @@
+<nav>
+  <div class="logo">
+    <img src="/assets/logo.png" class="nav-logo">
+  </div>
+  <div class="links" *ngIf="pageType != 'admin'">
+    <a routerLink="/login">Login</a>
+  </div>
+  <div class="nav-right" *ngIf="pageType == 'admin'">
+    <div class="links">
+      <a routerLink="" (click)="logout()">Logout</a>
+    </div>
+  </div>
+</nav>
+
+<div class="center">
+  <h1 class="content-title" *ngIf="pageType != 'admin'">Register</h1>
+  <h1 class="content-title" *ngIf="pageType == 'admin'">Add new user</h1>
+</div>
+<div class="center">
+  <form class="form">
+    <div>
+      <label>Firstname:</label>
+      <input type="text" name="firstaname" [(ngModel)]="firstname">
+    </div>
+    <div>
+      <label>Lastname:</label>
+      <input type="text" name="lastname" [(ngModel)]="lastname">
+    </div>
+    <div>
+      <label> Username </label>
+      <input type="text" name="username" [(ngModel)]="username">
+    </div>
+    <div>
+      <label> Password </label>
+      <input type="password" name="password" [(ngModel)]="password">
+    </div>
+    <div>
+      <label> Confirm password </label>
+      <input type="password" name="passwordC" [(ngModel)]="passwordC">
+    </div>
+    <div>
+      <label> Contact </label>
+      <input type="text" name="contact" [(ngModel)]="contact">
+    </div>
+    <div>
+      <label> Email </label>
+      <input type="text" name="email" [(ngModel)]="email">
+    </div>
+
+    <!--profilna slika - neobavezna-->
+    <div>
+      <label>Profile picture (optional)</label>
+      <input class="form-file" type="file" name="picture" accept="image/*" (change)="onFileSelected($event)"/>
+    </div>
+
+    <div>
+      <label> Do you want to be an organizer? </label>
+      <input type="checkbox" name="organ" [(ngModel)]="organ">
+    </div>
+
+    <div class="content-title">
+      <h3>If you want to be an organizer:</h3>
+    </div>
+
+    <div>
+      <label>Name of the organization:</label>
+      <input type="text" name="organization" [(ngModel)]="organization">
+    </div>
+    <div>
+      <label>Adress(country, city, zip code, street and number):</label>
+      <input type="text" name="adress" [(ngModel)]="adress">
+    </div>
+    <div>
+      <label>Registration number of the organization:</label>
+      <input type="text" name="regNumber" [(ngModel)]="regNumber">
+    </div>
+
+    <button (click)="register()" class="button">REGISTER</button>
+
+    <span class="error">
+      {{message}}
+    </span>
+    <span class="success">
+      {{successMessage}}
+    </span>
+
+  </form>
+</div>
+
+<div class="footer footer-fixed">
+  <small>
+      Copyright &copy; 2023, Slavica Mitrovic, University of Belgrade, School of Electrical Engineering
+  </small>
+</div>

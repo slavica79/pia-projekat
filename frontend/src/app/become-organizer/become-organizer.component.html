@@ -1,0 +1,111 @@
+<nav>
+  <div class="logo">
+    <img src="/assets/logo.png" class="nav-logo">
+  </div>
+  <div class="nav-right">
+    <div class="links">
+      <a routerLink="" (click)="logout()">Logout</a>
+    </div>
+    <div *ngIf="pageType != 'admin' && pageType != 'organ'">
+      <img src="/assets/menu.png" class="nav-profile nav-button">
+      <div class="dropdown">
+        <a routerLink="/changePassword">Change password</a>
+        <a routerLink="/participantProfile">View profile</a>
+        <a routerLink="/participant">Studios</a>
+        <a routerLink="/becomeOrganizer">Become an organizer</a>
+      </div>
+    </div>
+    <div *ngIf="pageType == 'organ'">
+      <img src="/assets/menu.png" class="nav-profile nav-button">
+      <div class="dropdown">
+        <a routerLink="/changePassword">Change password</a>
+        <a routerLink="/organizerProfile">View profile</a>
+        <a routerLink="/organizer">Studios</a>
+        <a routerLink="/becomeOrganizer">Add studio</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="center">
+  <h1 class="content-title">Organize studio</h1>
+</div>
+
+<div class="center">
+  <form class="form">
+    <div *ngIf="pageType === 'organ'">
+      <label>Insert template</label>
+      <input class="form-file" type="file" name="picture" accept="json/*" (change)="insertTemplate($event)"/>
+    </div>
+    <hr>
+    <div>
+      <label>Main picture</label>
+      <input class="form-file" type="file" name="picture" accept="image/*" (change)="onFileSelected($event)"/>
+    </div>
+    <div class="gallery">
+      <img src={{icon}} style="width: 150px; height: 150px;">
+    </div>
+    <div>
+      <label>Name:</label>
+      <input type="text" name="name" [(ngModel)]="name">
+    </div>
+    <div>
+      <label>Address:</label>
+      <input type="text" name="address" [(ngModel)]="address">
+    </div>
+    <div>
+      <label> Date </label>
+      <input type="date" name="date" [(ngModel)]="date">
+    </div>
+    <div>
+      <label> Time </label>
+      <input type="time" name="time" [(ngModel)]="time">
+    </div>
+    <div>
+      <label> Short description </label>
+      <input type="text" name="desc" [(ngModel)]="desc">
+    </div>
+    <div>
+      <label> Full description </label>
+      <textarea type="text" name="fullDesc" [(ngModel)]="fullDesc"></textarea>
+    </div>
+    <div>
+      <label> Username </label>
+      <input type="text" name="username" [(ngModel)]="username">
+    </div>
+    <div>
+      <label> Number of spaces </label>
+      <input type="number" name="free_spaces" [(ngModel)]="free_spaces">
+    </div>
+
+    <!--galerija slika-->
+
+    <div>
+      <label>Gallery</label>
+      <input class="form-file" type="file" name="picture" accept="image/*" (change)="onFileSelectedMultiple($event)" multiple/>
+    </div>
+
+    <div class="gallery">
+      <div class="item" *ngFor="let p of icons">
+        <img src={{p}} style="width: 150px; height: 150px;" (click)="deleteImage(p)">
+      </div>
+    </div>
+
+    <button (click)="create()" class="button">CREATE</button>
+
+    <span class="error">
+      {{message}}
+    </span>
+    <span class="success">
+      {{successMessage}}
+    </span>
+
+    <!--Add part to insert sablon radionice kod organizatora-->
+  </form>
+</div>
+
+<div class="footer footer-fixed">
+  <small>
+      Copyright &copy; 2023, Slavica Mitrovic, University of Belgrade, School of Electrical Engineering
+  </small>
+</div>

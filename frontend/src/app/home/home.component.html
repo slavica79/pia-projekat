@@ -1,0 +1,92 @@
+<nav>
+  <div class="logo">
+    <img src="/assets/logo.png" class="nav-logo">
+  </div>
+  <div class="links">
+    <a routerLink="login">Login</a> &nbsp;
+    <a routerLink="register">Register</a>
+  </div>
+</nav>
+<!--neregistrovani korisnik = home page-->
+
+<div class="center">
+  <h1 class="content-title">Welcome to our home page! To see more, please login or register!</h1>
+</div>
+
+<div class="content">
+
+  <form class="form">
+    <div class="buttons">
+      <div>
+        <label> Search parameter for name </label>
+        <br />
+        <input style="width: 80%;" type="text" name="searchParam1" [(ngModel)]="searchParam1">
+      </div>
+
+      <div>
+        <label> Search parameter for place </label>
+        <br />
+        <input style="width: 80%;" type="text" name="searchParam2" [(ngModel)]="searchParam2">
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button (click)="searchByName()" class="button">Search by name</button>
+      <button (click)="searchByPlace()" class="button">Search by place</button>
+      <button (click)="searchByNameAndPlace()" class="button">Search by both params</button>
+      <button (click)="sortStudiosByName()" class="button">Sort studios by name</button>
+      <button (click)="sortStudiosByDate()" class="button">Sort studios by date</button>
+    </div>
+  </form>
+
+  <h2>Studios</h2>
+  <table>
+    <tr>
+      <th>Picture</th>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Adress</th>
+      <th>Description</th>
+    </tr>
+    <tr *ngFor='let s of studios'>
+      <td style="background-color: white; border: none;">
+        <!--slika-->
+        <img src={{s.icon}} style="width: 100px; height: 100px;">
+      </td>
+      <td>{{s.name}}</td>
+      <td>{{stringAsDate(s.date)}}</td>
+      <td>{{s.address}}</td>
+      <td>{{s.description}}</td>
+    </tr>
+  </table>
+
+  <h2>Top 5 studios</h2>
+  <table>
+    <tr>
+      <th>Picture</th>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Adress</th>
+      <th>Description</th>
+      <th>Likes</th>
+    </tr>
+    <tr *ngFor='let s of studiosTop5'>
+      <td style="background-color: white; border: none;">
+        <!--slika-->
+        <img src={{s.icon}} style="width: 100px; height: 100px;">
+      </td>
+      <td>{{s.name}}</td>
+      <td>{{stringAsDate(s.date)}}</td>
+      <td>{{s.address}}</td>
+      <td>{{s.description}}</td>
+      <td>{{s.likes}}</td>
+    </tr>
+  </table>
+
+</div>
+
+<div class="footer footer-fixed">
+  <small>
+    Copyright &copy; 2023, Slavica Mitrovic, University of Belgrade, School of Electrical Engineering
+  </small>
+</div>
