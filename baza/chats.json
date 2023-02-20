@@ -1,0 +1,128 @@
+[{
+  "_id": {
+    "$oid": "63ea81ad70f7167ba1aeb3f3"
+  },
+  "messages": [
+    {
+      "from": "slavica",
+      "message": "hej ti reci ko smo mi sada",
+      "date": {
+        "$date": {
+          "$numberLong": "1686009600000"
+        }
+      }
+    },
+    {
+      "from": "organ",
+      "message": "ljubavi mi smo mnogo toga hteli zajedno",
+      "date": {
+        "$date": {
+          "$numberLong": "1686009600000"
+        }
+      }
+    },
+    {
+      "from": "slavica",
+      "message": "samo jedno nismo smeli nikadaaaa",
+      "date": "2023-02-18T16:40:49.761Z"
+    },
+    {
+      "from": "slavica",
+      "message": "nije smeeelo da se desiiii",
+      "date": "2023-02-18T16:41:25.498Z"
+    },
+    {
+      "from": "slavica",
+      "message": "hello",
+      "date": "2023-02-18T19:15:47.049Z"
+    }
+  ],
+  "studio": "crtanje i slikanje",
+  "organizer": "organ",
+  "participant": "slavica"
+},{
+  "_id": {
+    "$oid": "63f10a014e1998fad29e4e81"
+  },
+  "participant": "slavica",
+  "organizer": "organ",
+  "messages": [
+    {
+      "from": "slavica",
+      "message": "preeeelepa je bozeee",
+      "date": "2023-02-18T17:25:21.466Z"
+    },
+    {
+      "from": "slavica",
+      "message": "lepaa je ko ikonaaa",
+      "date": "2023-02-18T17:25:41.084Z"
+    },
+    {
+      "from": "slavica",
+      "message": "sa svima se kockalaaa",
+      "date": "2023-02-18T17:27:38.236Z"
+    },
+    {
+      "from": "slavica",
+      "message": "dusu mi je uzelaaaa",
+      "date": "2023-02-18T17:27:47.716Z"
+    }
+  ],
+  "studio": "ikonopis",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f10a9eae68f5ad5451d2f3"
+  },
+  "participant": "slavica",
+  "organizer": "organ",
+  "messages": [
+    {
+      "from": "slavica",
+      "message": "mjerkam te mjerkam",
+      "date": "2023-02-18T17:27:58.420Z"
+    }
+  ],
+  "studio": "vajanje",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f11234ae68f5ad5451d3d0"
+  },
+  "participant": "slavica",
+  "organizer": "organ",
+  "messages": [
+    {
+      "from": "slavica",
+      "message": "holaaa",
+      "date": "2023-02-18T18:00:20.492Z"
+    }
+  ],
+  "studio": "dekupaz",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f15f6a9968d9c7d7960e8b"
+  },
+  "participant": "slavka",
+  "organizer": "organ",
+  "messages": [
+    {
+      "from": "slavka",
+      "message": "halo ja sam",
+      "date": "2023-02-18T23:29:46.553Z"
+    },
+    {
+      "from": "slavka",
+      "message": "zovem samo da ti cujem glaaas",
+      "date": "2023-02-18T23:34:23.574Z"
+    },
+    {
+      "from": "organ",
+      "message": "da ti kazem ne prestajem da mislim na naas",
+      "date": "2023-02-18T23:35:30.552Z"
+    }
+  ],
+  "studio": "crtanje i slikanje",
+  "__v": 0
+}]

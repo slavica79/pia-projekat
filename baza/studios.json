@@ -1,0 +1,169 @@
+[{
+  "_id": {
+    "$oid": "63d2c002c23157fbd2bf7163"
+  },
+  "name": "crtanje i slikanje",
+  "date": {
+    "$date": {
+      "$numberLong": "1686074400000"
+    }
+  },
+  "description": "Polaznici imaju priliku da se upoznaju sa osnovama crtanja i slikanja.",
+  "full_description": "Naša škola crtanja i slikanja za odrasle je namenjena svima koji žele da se opuste, nauče osnovne slikarske tehnike i razviju svoju kreativnost.",
+  "likes": 47,
+  "approved": true,
+  "user": "organ",
+  "free_spaces": 15,
+  "registered_users": [
+    "slavica@gmail.com",
+    "ms190324d@student.etf.bg.ac.rs"
+  ],
+  "address": "Internacionalnih brigada 74, Beograd, Srbija",
+  "waiting_users": [],
+  "registration_requested": [
+    "ms190324d@student.etf.bg.ac.rs"
+  ]
+},{
+  "_id": {
+    "$oid": "63d2c002c23157fbd2bf7164"
+  },
+  "name": "maketarstvo",
+  "date": {
+    "$date": {
+      "$numberLong": "1672531200000"
+    }
+  },
+  "description": "Maketarstvo je specifična profesija, ali i hobi, kojim se bave kreativni ljudi",
+  "full_description": "Polaznici se mogu upoznati sa osnovama maketarstva, i uvideti da su od talenta mnogo bitniji trud, strpljenje i želja da njihove ruke stvore nešto vredno divljenja",
+  "likes": 25,
+  "approved": true,
+  "user": "organ",
+  "address": "Bulevar Milutina Milankovica 15, Beograd, Srbija",
+  "free_spaces": 10,
+  "registered_users": [],
+  "waiting_users": [],
+  "registration_requested": []
+},{
+  "_id": {
+    "$oid": "63d2c002c23157fbd2bf7165"
+  },
+  "name": "ikonopis",
+  "date": {
+    "$date": {
+      "$numberLong": "1686009600000"
+    }
+  },
+  "description": "polaznici imaju priliku da se upoznaju sa osnovama koje tehnika ikonopisanja pruža.",
+  "full_description": "Ikonopis je vekovima star zanat, koji je uprkos svojim strogim kanonima uvek privlačio i inspirisao brojne umetnike i amatere.",
+  "likes": 150,
+  "approved": true,
+  "user": "organ",
+  "address": "Bulevar Kralja Aleksandra 200, Beograd, Srbija",
+  "free_spaces": 15,
+  "registered_users": [],
+  "waiting_users": [],
+  "registration_requested": []
+},{
+  "_id": {
+    "$oid": "63d2c002c23157fbd2bf7166"
+  },
+  "name": "vajanje",
+  "date": {
+    "$date": {
+      "$numberLong": "1688688000000"
+    }
+  },
+  "description": "Ovaj kurs vajarstva od četiri časa je uzbudljiva mogućnost za početnike.",
+  "full_description": "Nauče šta je vajarstvo i steknu ili razviju osnovne vajarske veštine. Kroz rad sa glinom i gipsom, naučićete niz tehnika uz priliku da istražite svoju kreativnost.",
+  "likes": 13,
+  "approved": true,
+  "user": "organ",
+  "address": "Bulevar Mihaila Pupina 36, Nis, Srbija",
+  "free_spaces": 0,
+  "registered_users": [],
+  "waiting_users": [
+    "slavica@gmail.com"
+  ],
+  "registration_requested": []
+},{
+  "_id": {
+    "$oid": "63d2c002c23157fbd2bf7167"
+  },
+  "name": "dekupaz",
+  "date": {
+    "$date": {
+      "$numberLong": "1683244800000"
+    }
+  },
+  "description": "Dekupaž tehnika je tehnika kojojm svaki predmet možete da pretvorite u Vaše malo umetničko delo.",
+  "full_description": "Možda se ne slažu svi da je dekupaž umetnost, ali jeste delo Vaših ruku koje ćete Vi gledati i diviti mu se, za Vas će to biti čista umetnost.",
+  "likes": 27,
+  "approved": true,
+  "user": "organ",
+  "address": "Kneza Mihaila 14, Arandjelovac, Srbija",
+  "free_spaces": 35,
+  "registered_users": [],
+  "waiting_users": [],
+  "registration_requested": []
+},{
+  "_id": {
+    "$oid": "63d2c002c23157fbd2bf7168"
+  },
+  "name": "mozaik",
+  "date": {
+    "$date": {
+      "$numberLong": "1699660800000"
+    }
+  },
+  "description": "Beo Art House mozaik kurs upućuje polaznike na mogućnosti koje tehnika mozaika pruža i uči ih kako napraviti mozaiksamostalno.",
+  "full_description": "Kroz kvalitetno provedeno vreme u radionicama, uz druženje u veseloj atmosferi, polaznici stiču teorijsko i praktično znanje, ovladavaju veštinom izrade mozaika, upotrebom alata i upoznaju se sa njegovim vrstama.",
+  "likes": 200,
+  "approved": true,
+  "user": "organ",
+  "address": "Obrenoviceva 89, Nis, Srbija",
+  "free_spaces": 20,
+  "registered_users": [],
+  "waiting_users": [],
+  "registration_requested": []
+},{
+  "_id": {
+    "$oid": "63ef4ba0f05a3af4bc8f671b"
+  },
+  "name": "dekupaz2",
+  "date": {
+    "$date": {
+      "$numberLong": "1683676800000"
+    }
+  },
+  "description": "Dekupaž tehnika je tehnika kojojm svaki predmet možete da pretvorite u Vaše malo umetničko delo.",
+  "full_description": "Možda se ne slažu svi da je dekupaž umetnost, ali jeste delo Vaših ruku koje ćete Vi gledati i diviti mu se, za Vas će to biti čista umetnost.",
+  "likes": 27,
+  "approved": false,
+  "user": "slavica",
+  "address": "Kneza Mihaila 14, Arandjelovac, Srbija",
+  "free_spaces": 5,
+  "registered_users": [],
+  "waiting_users": [],
+  "registration_requested": []
+},{
+  "_id": {
+    "$oid": "63f2826d60507166cab00d43"
+  },
+  "user": "organ",
+  "name": "crtanje i slikanje2",
+  "date": {
+    "$date": {
+      "$numberLong": "1687111200000"
+    }
+  },
+  "address": "Internacionalnih brigada 74, Beograd, Srbija",
+  "description": "Polaznici imaju priliku da se upoznaju sa osnovama crtanja i slikanja.",
+  "full_description": "Naša škola crtanja i slikanja za odrasle je namenjena svima koji žele da se opuste, nauče osnovne slikarske tehnike i razviju svoju kreativnost.",
+  "likes": 0,
+  "free_spaces": 20,
+  "registered_users": [],
+  "waiting_users": [],
+  "registration_requested": [],
+  "approved": false,
+  "__v": 0
+}]

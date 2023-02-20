@@ -1,0 +1,90 @@
+[{
+  "_id": {
+    "$oid": "63b8248e894c47a10a8cacf4"
+  },
+  "firstname": "Slavica",
+  "lastname": "Mitrovic",
+  "username": "slavica",
+  "password": "slavica123",
+  "contact": "00700779",
+  "email": "slavica@gmail.com",
+  "type": 0,
+  "status": "aktivan",
+  "valid_pass": 0,
+  "likes": [
+    "maketarstvo",
+    "crtanje i slikanje"
+  ],
+  "studios": [
+    "dekupaz",
+    "maketarstvo",
+    "crtanje i slikanje"
+  ]
+},{
+  "_id": {
+    "$oid": "63b8248e894c47a10a8cacf5"
+  },
+  "firstname": "Organizator",
+  "lastname": "Organizator",
+  "username": "organ",
+  "password": "organ123",
+  "contact": "666666666",
+  "email": "organizator@gmail.com",
+  "type": 1,
+  "status": "aktivan",
+  "org_adress": "Srbija, Beograd, 11000, Bulevar 200",
+  "org_name": "Moja prva organizacija",
+  "org_number": "009726789",
+  "valid_pass": 0
+},{
+  "_id": {
+    "$oid": "63b8248e894c47a10a8cacf6"
+  },
+  "firstname": "Admin",
+  "lastname": "Admin",
+  "username": "admin",
+  "password": "admin123",
+  "contact": "12345678",
+  "email": "admin@gmail.com",
+  "type": 2,
+  "status": "aktivan",
+  "valid_pass": 0
+},{
+  "_id": {
+    "$oid": "63cfd64dfd3ab85eacd14d87"
+  },
+  "firstname": "Slavica",
+  "lastname": "Mitrovic",
+  "username": "slavka",
+  "password": "Slavica123!",
+  "contact": "007007000",
+  "email": "ms190324d@student.etf.bg.ac.rs",
+  "type": 0,
+  "status": "aktivan",
+  "org_adress": null,
+  "org_name": null,
+  "org_number": null,
+  "__v": 0,
+  "valid_pass": 0,
+  "likes": [],
+  "studios": [
+    "crtanje i slikanje"
+  ]
+},{
+  "_id": {
+    "$oid": "63d16ee0cba1b3b0a38f72eb"
+  },
+  "firstname": "Marko",
+  "lastname": "Maksimovic",
+  "username": "maksa",
+  "password": "Maksa123!",
+  "contact": "89898989",
+  "email": "maksa@gmail.com",
+  "valid_pass": 0,
+  "type": 0,
+  "status": "",
+  "org_adress": null,
+  "org_name": null,
+  "org_number": null,
+  "__v": 0
+}]
